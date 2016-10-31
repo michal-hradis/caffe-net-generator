@@ -1,0 +1,11 @@
+layer {
+  name: "__TOP__"
+  top: "__TOP__"
+  type: "SoftmaxWithLoss"
+  bottom: "__IN1__"
+  bottom: "__IN2__"
+  loss_param{
+    ignore_label: 1
+  }
+  loss_weight: 1
+}

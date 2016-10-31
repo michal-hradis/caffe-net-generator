@@ -1,0 +1,10 @@
+layer {
+  name:  "__TOP___drop"
+  type: "Dropout"
+  bottom: "__TOP__"
+  top: "__TOP__"
+
+  dropout_param {
+    dropout_ratio: __RATIO:0.5__
+  }
+}

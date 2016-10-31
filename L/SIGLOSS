@@ -1,0 +1,8 @@
+layer {
+  name: "__TOP__"
+  type: "SigmoidCrossEntropyLoss"
+  bottom: "__IN1__"
+  bottom: "__IN2__"
+  top: "__TOP__"
+  loss_weight: 1
+}

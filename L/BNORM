@@ -1,0 +1,14 @@
+layer {
+  name: "__TOP__-bn"
+  type: "BatchNorm"
+  bottom: "__TOP__"
+  top: "__TOP__"
+  batch_norm_param {
+    moving_average_fraction: 0.992
+    eps: 0.0001
+    use_global_stats: false
+  }
+  param{lr_mult:0.0}
+  param{lr_mult:0.0}
+  param{lr_mult:0.0}
+}

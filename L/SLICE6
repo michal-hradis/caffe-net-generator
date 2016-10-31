@@ -1,0 +1,19 @@
+layer {
+  name: "__TOP__"
+  type: "Slice"
+  bottom: "__IN__"
+  top: "__OUT1__"
+  top: "__OUT2__"
+  top: "__OUT3__"
+  top: "__OUT4__"
+  top: "__OUT5__"
+  top: "__OUT6__"
+  slice_param {
+    axis: 1
+    slice_point: __SLICE1__
+    slice_point: __SLICE2__
+    slice_point: __SLICE3__
+    slice_point: __SLICE4__
+    slice_point: __SLICE5__
+  }
+}

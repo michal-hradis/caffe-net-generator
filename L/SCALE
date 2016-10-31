@@ -1,0 +1,13 @@
+layer {
+    bottom: "__TOP__"
+    top: "__TOP__"
+    name: "__TOP__-scale"
+    type: "Scale"
+    param { lr_mult: __W_LR:1__,
+       decay_mult: __W_DC:1__}
+
+    scale_param {
+        bias_term: false
+        filler{value: __VAL:1__}
+    }
+}

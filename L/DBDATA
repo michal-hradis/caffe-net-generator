@@ -1,0 +1,13 @@
+layer {
+    name: "__TOP__=__PHASE:train__"
+    type: "Data"
+    top: "__TOP__"
+    include{
+        phase: __PHASE:TRAIN__
+    }
+    data_param{
+        source: "__PATH__"
+        batch_size: __BATCH:32__
+        backend: __BACKEND:LMDB__
+    }
+}

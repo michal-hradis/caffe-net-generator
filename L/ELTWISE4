@@ -1,0 +1,10 @@
+layer {
+  name: "__TOP__"
+  type: "Eltwise"
+  bottom: "__IN1__"
+  bottom: "__IN2__"
+  bottom: "__IN3__"
+  bottom: "__IN4__"
+  top: "__TOP__"
+  eltwise_param { operation: __OP:SUM__ }
+}

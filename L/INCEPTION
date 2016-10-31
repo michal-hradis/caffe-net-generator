@@ -1,0 +1,140 @@
+layer {
+  name: "__TOP__-conv1"
+  type: "Convolution"
+  bottom: "__IN__"
+  top: "__TOP__-conv1"
+
+  param { lr_mult: __W_LR:1__,
+          decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+          decay_mult: 0}
+  convolution_param {
+    kernel_size: 1
+    num_output: __CHANNELS:105__
+    stride: 1
+    pad: 0
+    group: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "__TOP__-conv1-relu"
+  type: "ReLU"
+  bottom: "__TOP__-conv1"
+  top: "__TOP__-conv1"
+}
+layer {
+  name: "__TOP__-slice"
+  type: "Slice"
+  bottom: "__TOP__-conv1"
+  ## Example of label with a shape N x 3 x 1 x 1
+  top: "__TOP__-slice1"
+  top: "__TOP__-slice3"
+  top: "__TOP__-slice5"
+  top: "__TOP__-slice7"
+  slice_param {
+    axis: 1
+    slice_point: __SLICE3:64__
+    slice_point: __SLICE5:85__
+    slice_point: __SLICE7:97__
+  }
+}
+layer {
+  name: "__TOP__-conv3"
+  type: "Convolution"
+  bottom: "__TOP__-slice3"
+  top: "__TOP__-conv3"
+
+  param { lr_mult: __W_LR:1__,
+          decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+          decay_mult: 0}
+  convolution_param {
+    kernel_size: 3
+    num_output: __CHANNELS3:21__
+    stride: 1
+    pad: 1
+    group: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "__TOP__-conv5"
+  type: "Convolution"
+  bottom: "__TOP__-slice5"
+  top: "__TOP__-conv5"
+
+  param { lr_mult: __W_LR:1__,
+          decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+          decay_mult: 0}
+  convolution_param {
+    kernel_size: 5
+    num_output: __CHANNELS5:12__
+    stride: 1
+    pad: 2
+    group: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "__TOP__-conv7"
+  type: "Convolution"
+  bottom: "__TOP__-slice7"
+  top: "__TOP__-conv7"
+
+  param { lr_mult: __W_LR:1__,
+          decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+          decay_mult: 0}
+  convolution_param {
+    kernel_size: 7
+    num_output: __CHANNELS7:12__
+    stride: 1
+    pad: 3
+    group: 1
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}
+layer {
+  name: "concat"
+  bottom: "__TOP__-slice1"
+  bottom: "__TOP__-conv3"
+  bottom: "__TOP__-conv5"
+  bottom: "__TOP__-conv7"
+  top: "__TOP__"
+  type: "Concat"
+  concat_param {
+    axis: 1
+  }
+}
+layer {
+  name: "__TOP__-relu"
+  type: "ReLU"
+  bottom: "__TOP__"
+  top: "__TOP__"
+}

@@ -1,0 +1,14 @@
+layer{
+    name: "__TOP__"
+    type: "Reshape"
+    bottom: "__IN__"
+    top: "__TOP__"
+    reshape_param{
+        shape{
+            dim: __DIM1__
+            dim: __DIM2__
+            dim: __DIM3__
+            dim: __DIM4__
+        }
+    }
+}

@@ -1,0 +1,12 @@
+layer {
+  name: "__TOP__"
+  type: "LRN"
+  bottom: "__IN__"
+  top: "__TOP__"
+
+  lrn_param {
+    local_size: __K_SIZE:5__
+    alpha: __ALPHA:0.0001__
+    beta: __BETA:0.75__
+  }
+}

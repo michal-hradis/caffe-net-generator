@@ -1,0 +1,13 @@
+layer {
+  type: 'Python'
+  name: '__TOP__'
+  top: '__TOP__'
+  bottom: '__IN1__'
+  bottom: '__IN2__'
+  python_param {
+    # the module name -- usually the filename -- that needs to be in $PYTHONPATH
+    module: 'pyLayers'
+    # the layer name -- the class name in the module
+    layer: 'CropLayer'
+  }
+}

@@ -1,0 +1,20 @@
+# this should create a net equivalent to the exemplar caffe net for imagenet
+DATA TOP data    DIM1 4 DIM3 64 DIM4 64
+DATA TOP labels  DIM1 4 DIM3 64 DIM4 64
+
+CONV TOP conv1 IN data    K_SIZE 9 CHANNELS 48 B_LR 0 PAD 4
+RELU TOP conv1
+CONCAT2 TOP conv1-c IN1 conv1 IN2 data
+CONV TOP conv2 IN conv1-c   K_SIZE 3 CHANNELS 64 GROUP 1  B_LR 0 PAD 1
+RELU TOP conv2
+CONCAT2 TOP conv2-c IN1 conv2 IN2 data
+CONV TOP conv3 IN conv2-c   K_SIZE 3 CHANNELS 64 GROUP 1  B_LR 0 PAD 1
+RELU TOP conv3
+CONCAT3 TOP conv3-c IN1 conv3 IN2 conv1 IN3 data
+CONV TOP conv4 IN conv3-c   K_SIZE 3 CHANNELS 64  B_LR 0 PAD 1
+RELU TOP conv4
+CONCAT2 TOP conv4-c IN1 conv4 IN2 data
+
+CONV TOP conv_out IN conv4-c   K_SIZE 5 CHANNELS 1
+
+CROPLOSS TOP loss IN-NET conv_out

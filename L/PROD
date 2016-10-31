@@ -1,0 +1,24 @@
+layer {
+  name: "__TOP__"
+  type: "InnerProduct"
+  bottom: "__IN__"
+  top: "__TOP__"
+
+  param { lr_mult: __W_LR:1__,
+       decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+       decay_mult: 0}
+
+  inner_product_param {
+    num_output: __CHANNELS:64__
+
+    weight_filler {
+      type: "__W_FILLER:xavier__"
+      std: __W_STD:0.001__
+    }
+    bias_filler {
+      type: "constant"
+      value: __B_VAL:0__
+    }
+  }
+}

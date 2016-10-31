@@ -1,0 +1,10 @@
+layer {
+    bottom: "__IN1__"
+    bottom: "__IN2__"
+    top: "__TOP__"
+    name: "__TOP__"
+    type: "Crop"
+    crop_param {
+        offset: __OFFSET__
+    }
+}

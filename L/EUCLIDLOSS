@@ -1,0 +1,7 @@
+layer {
+    name: "__TOP__"
+    top: "__TOP__"
+    type: "EuclideanLoss"
+    bottom: "__IN1__"
+    bottom: "__IN2__"
+}

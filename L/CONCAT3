@@ -1,0 +1,11 @@
+layer {
+  name: "__TOP__"
+  bottom: "__IN1__"
+  bottom: "__IN2__"
+  bottom: "__IN3__"
+  top: "__TOP__"
+  type: "Concat"
+  concat_param {
+    axis: 1
+  }
+}

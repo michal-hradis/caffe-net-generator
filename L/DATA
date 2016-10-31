@@ -1,0 +1,7 @@
+input: "__TOP__"
+input_shape {
+  dim: __DIM1:8__
+  dim: __DIM2:1__
+  dim: __DIM3:64__
+  dim: __DIM4:64__
+}

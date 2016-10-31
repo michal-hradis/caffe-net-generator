@@ -1,0 +1,16 @@
+# this should create a net equivalent to the exemplar caffe net for imagenet
+DATA TOP data    DIM1 4 DIM3 128 DIM4 128
+DATA TOP labels  DIM1 4 DIM3 128 DIM4 128
+CONV TOP conv1 IN data  K_SIZE 11 CHANNELS 64
+RELU TOP conv1
+INCEPTION TOP inc1 IN conv1
+INCEPTION TOP inc2 IN inc1
+INCEPTION TOP inc3 IN inc2
+INCEPTION TOP inc4 IN inc3
+INCEPTION TOP inc5 IN inc4
+
+CONV TOP conv8 IN inc5   K_SIZE 5 CHANNELS 1 B_LR 0.1 W_LR 0.25
+RELU TOP conv8
+
+CROPSUM TOP residual IN1 data IN2 conv8
+CROPLOSS TOP loss IN-NET residual

@@ -1,0 +1,7 @@
+layer {
+      name: "__TOP__-relu"
+      type: 'PReLU'
+      bottom: '__TOP__'
+      top: '__TOP__'
+      prelu_param { filler {type: 'constant' value: __VAL:0.01__} }
+}
