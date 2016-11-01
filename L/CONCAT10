@@ -6,6 +6,10 @@ layer {
   bottom: "__IN4__"
   bottom: "__IN5__"
   bottom: "__IN6__"
+  bottom: "__IN7__"
+  bottom: "__IN8__"
+  bottom: "__IN9__"
+  bottom: "__IN10__"
   top: "__TOP__"
   type: "Concat"
   concat_param {

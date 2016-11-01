@@ -1,0 +1,37 @@
+layer {
+  name: "__TOP__"
+  type: "Slice"
+  bottom: "__IN__"
+  top: "__TOP__1"
+  top: "__TOP__2"
+  top: "__TOP__3"
+  top: "__TOP__4"
+  top: "__TOP__5"
+  top: "__TOP__6"
+  top: "__TOP__7"
+  top: "__TOP__8"
+  top: "__TOP__9"
+  top: "__TOP__10"
+  top: "__TOP__11"
+  top: "__TOP__12"
+  top: "__TOP__13"
+  top: "__TOP__14"
+  top: "__TOP__15"
+  slice_param {
+    axis: __AXIS:1__
+    slice_point: __POINT1__
+    slice_point: __POINT2__
+    slice_point: __POINT3__
+    slice_point: __POINT4__
+    slice_point: __POINT5__
+    slice_point: __POINT6__
+    slice_point: __POINT7__
+    slice_point: __POINT8__
+    slice_point: __POINT9__
+    slice_point: __POINT10__
+    slice_point: __POINT11__
+    slice_point: __POINT12__
+    slice_point: __POINT13__
+    slice_point: __POINT14__
+  }
+}

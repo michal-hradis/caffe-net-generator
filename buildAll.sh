@@ -7,7 +7,6 @@ do
     mkdir -p "$NET_DIR"
 
     ./buildNetwork.sh <"$DEF_DIR/$DEF" >$NET_DIR/net_train_val.prototxt
-    echo $DEF DONE
 
-    cp net_solver.prototxt "$NET_DIR"
+    cp -n net_solver.prototxt "$NET_DIR"
 done

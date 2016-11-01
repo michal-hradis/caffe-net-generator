@@ -8,6 +8,10 @@ layer {
   top: "__TOP__4"
   top: "__TOP__5"
   top: "__TOP__6"
+  top: "__TOP__7"
+  top: "__TOP__8"
+  top: "__TOP__9"
+  top: "__TOP__10"
   slice_param {
     axis: __AXIS:1__
     slice_point: __POINT1__
@@ -15,5 +19,9 @@ layer {
     slice_point: __POINT3__
     slice_point: __POINT4__
     slice_point: __POINT5__
+    slice_point: __POINT6__
+    slice_point: __POINT7__
+    slice_point: __POINT8__
+    slice_point: __POINT9__
   }
 }

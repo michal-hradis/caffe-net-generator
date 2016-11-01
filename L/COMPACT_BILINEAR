@@ -1,0 +1,11 @@
+layer {
+  name: "__TOP__"
+  type: "CompactBilinear"
+  bottom: "__IN1__"
+  bottom: "__IN2__"
+  top: "__TOP__"
+  compact_bilinear_param {
+    num_output: __OUT_SIZE__
+    sum_pool: __SUM_POOL:false__
+  }
+}
