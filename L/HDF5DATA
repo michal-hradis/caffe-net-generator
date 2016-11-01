@@ -1,0 +1,10 @@
+layer {
+  name: "__TOP__"
+  type: "HDF5Data"
+  top: "__TOP__"
+  hdf5_data_param {
+    source: "__SOURCE__"
+    batch_size: __BATCH__
+  }
+  include: { phase: __PHASE:TRAIN__ }
+}

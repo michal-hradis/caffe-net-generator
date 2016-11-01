@@ -4,4 +4,5 @@ layer {
     type: "EuclideanLoss"
     bottom: "__IN1__"
     bottom: "__IN2__"
+    loss_weight: __WEIGHT:1__
 }

@@ -1,0 +1,11 @@
+layer {
+  name: "__TOP__"
+  bottom: "__IN__"
+  top: "__TOP__"
+  type: "Power"
+  power_param {
+    power: __POWER__
+    scale: __SCALE__
+    shift: __SHIFT__
+  }
+}
