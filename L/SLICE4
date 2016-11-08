@@ -2,14 +2,14 @@ layer {
   name: "__TOP__"
   type: "Slice"
   bottom: "__IN__"
-  top: "__OUT1__"
-  top: "__OUT2__"
-  top: "__OUT3__"
-  top: "__OUT4__"
+  top: "__TOP__1"
+  top: "__TOP__2"
+  top: "__TOP__3"
+  top: "__TOP__4"
   slice_param {
-    axis: 1
-    slice_point: __SLICE1__
-    slice_point: __SLICE2__
-    slice_point: __SLICE3__
+    axis: __AXIS:1__
+    slice_point: __POINT1__
+    slice_point: __POINT2__
+    slice_point: __POINT3__
   }
 }

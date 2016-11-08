@@ -1,8 +1,7 @@
 layer {
   name: "__TOP__"
+  top: "__TOP__"
   type: "Accuracy"
   bottom: "__IN1__"
   bottom: "__IN2__"
-  top: "__TOP__"
-  loss_weight: 0
 }

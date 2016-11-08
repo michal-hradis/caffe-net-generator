@@ -1,0 +1,27 @@
+layer {
+  name: "__TOP__"
+  type: "Convolution"
+  bottom: "__IN__"
+  top: "__TOP__"
+
+  param { lr_mult: __W_LR:1__,
+       decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+       decay_mult: 0}
+  convolution_param {
+    bias_term: __BIAS:true__
+    kernel_w: __K_SIZE_W:3__
+    kernel_h: __K_SIZE_H:3__
+    num_output: __CHANNELS:64__
+    stride: __STRIDE:1__
+    pad: __PAD:0__
+    group: __GROUP:1__
+    weight_filler {
+      type: "xavier"
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+  }
+}

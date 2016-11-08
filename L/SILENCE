@@ -1,0 +1,5 @@
+layer {
+  name: "__TOP__"
+  bottom: "__IN__"
+  type: "Silence"
+}

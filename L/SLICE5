@@ -4,8 +4,14 @@ layer {
   bottom: "__IN__"
   top: "__TOP__1"
   top: "__TOP__2"
+  top: "__TOP__3"
+  top: "__TOP__4"
+  top: "__TOP__5"
   slice_param {
     axis: __AXIS:1__
     slice_point: __POINT1__
+    slice_point: __POINT2__
+    slice_point: __POINT3__
+    slice_point: __POINT4__
   }
 }
