@@ -1,0 +1,24 @@
+layer {
+  name: "__TOP__"
+  type: "Embed"
+  bottom: "__IN__"
+  top: "__TOP__"
+
+  param { lr_mult: __W_LR:1__,
+       decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__,
+       decay_mult: 0}
+  embed_param {
+    num_output: __CHANNELS:64__
+    input_dim: __IN_DIM:2000__
+    bias_term: __BIAS:true__
+    weight_filler {
+      type: "__W_FILLER:xavier__"
+      std: __W_STD:0.001__
+    }
+    bias_filler {
+      type: "constant"
+      value: __B_VAL:0__
+    }
+  }
+}
