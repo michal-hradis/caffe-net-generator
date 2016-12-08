@@ -1,7 +1,7 @@
 layer {
-    bottom: "__TOP__"
+    bottom: "__IN__"
     top: "__TOP__"
-    name: "__TOP__-scale"
+    name: "__TOP__"
     type: "Scale"
     param { lr_mult: __W_LR:1__,
        decay_mult: __W_DC:1__}

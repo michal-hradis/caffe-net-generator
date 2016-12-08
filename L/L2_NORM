@@ -1,6 +1,13 @@
 layer {
   name: "__TOP__"
-  type: "L2Normalize"
   bottom: "__IN__"
   top: "__TOP__"
+  type: "LRN"
+  lrn_param {
+    local_size: 1
+    alpha: __ALPHA__
+    beta: __BETA:0.5__
+    norm_region: ACROSS_CHANNELS
+    k: 0.0001
+  }
 }

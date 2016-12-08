@@ -1,6 +1,7 @@
 # caffe-net-generator
 Very simple bash scripts that generate caffe net prototxt files from concise text files.
 It uses pure text substitution on prototxt templates.
+I wellcome all contributions.
 
 ## Basics
 Networks definitions are in ./definitions/.
@@ -35,7 +36,7 @@ layer {
 
 This should create net similar to standard Cafe net:
 ```
-# this should create a net equivalent to the exemplar caffe net for imagenet
+# this should create a net similar to the exemplar caffe net for imagenet
 DATA TOP data    DIM1 32 DIM2 3 DIM3 227 DIM4 227
 DATA TOP labels  DIM1 32 DIM2 1 DIM3 1 DIM4 1
 CONV TOP conv1 IN data   K_SIZE 11 CHANNELS 96 STRIDE 4 B_LR 2
@@ -67,5 +68,3 @@ PROD TOP fc8   IN fc7     CHANNELS 1000
 ACCURACY TOP acc IN1 fc8 IN2 labels
 SOFTMAXLOSS TOP loss IN1 fc8 IN2 labels
 ```
-
-
