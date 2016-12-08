@@ -1,0 +1,27 @@
+layer {
+  name: "__TOP__-diff"
+  type: "Eltwise"
+  bottom: "__IN1__"
+  bottom: "__IN2__"
+  top: "__TOP__-diff"
+  eltwise_param { operation: __OP:SUM__
+    coeff: 1
+    coeff: -1
+  }
+}
+layer {
+  name: "__TOP__-abs"
+  bottom: "__TOP__-diff"
+  top: "__TOP__-abs"
+  type: "AbsVal"
+}
+layer {
+  name: "__TOP__"
+  bottom: "__TOP__-abs"
+  top: "__TOP__"
+  type: "Reduction"
+  reduction_param {
+    operation: MEAN
+  }
+  loss_weight: 1
+}
