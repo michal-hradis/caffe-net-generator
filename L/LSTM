@@ -1,0 +1,19 @@
+layer {
+  name: "__TOP__"
+  type: "LSTM"
+  bottom: "__IN__"
+  bottom: "__CLIP__"
+  top: "__TOP__"
+
+  recurrent_param {
+    num_output: __CHANNELS__
+    #clipping_threshold: 0.1
+    weight_filler {
+      type: "gaussian"
+      std: 0.1
+    }
+    bias_filler {
+      type: "constant"
+    }
+  }
+}
