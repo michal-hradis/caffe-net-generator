@@ -1,0 +1,7 @@
+layer {
+  name: "__TOP__.sig"
+  bottom: "__TOP__"
+  top: "__TOP__"
+  type: "TanH"
+}
+
