@@ -5,6 +5,6 @@ layer {
   top: "__TOP__"
   type: "Concat"
   concat_param {
-    axis: 1
+    axis: __AXIS:1__
   }
 }
