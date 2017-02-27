@@ -9,7 +9,7 @@ layer {
     num_output: __CHANNELS__
     #clipping_threshold: 0.1
     weight_filler {
-      type: "gaussian"
+      type: "xavier"
       std: 0.1
     }
     bias_filler {
