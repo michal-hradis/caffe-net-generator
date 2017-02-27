@@ -2,8 +2,8 @@ layer {
   name: "__TOP__"
   type: "Slice"
   bottom: "__IN__"
-  top: "__TOP__1"
-  top: "__TOP__2"
+  top: "__TOP1__"
+  top: "__TOP2__"
   slice_param {
     axis: __AXIS:1__
     slice_point: __POINT1__
