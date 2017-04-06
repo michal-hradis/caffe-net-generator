@@ -1,0 +1,6 @@
+layer {
+  name: "__TOP__"
+  type: "Signum"
+  bottom: "__IN__"
+  top: "__TOP__"
+}
