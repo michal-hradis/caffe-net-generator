@@ -4,9 +4,9 @@ layer {
   bottom: "__IN__"
   top: "__TOP__"
 
-  param { lr_mult: __W_LR:1__,
+  param { lr_mult: __W_LR:1__
        decay_mult: __W_DC:1__}
-  param { lr_mult: __B_LR:1__,
+  param { lr_mult: __B_LR:1__
        decay_mult: 0}
   convolution_param {
     bias_term: __BIAS:true__
@@ -25,7 +25,7 @@ layer {
     }
   }
   binary_convolution_param {
-    update_weight_diff: __UPDATE:false__
-    scale_weight_diff: __SCALE:false__  
+    update_weight_diff: __UPDATE:true__
+    scale_weight_diff: __SCALE:true__  
   }
 }
