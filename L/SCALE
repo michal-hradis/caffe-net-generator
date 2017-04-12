@@ -3,8 +3,8 @@ layer {
     top: "__TOP__"
     name: "__TOP__.scaled"
     type: "Scale"
-    param { lr_mult: __W_LR:1__,
-       decay_mult: __W_DC:1__}
+    param { lr_mult: __W_LR:1__
+            decay_mult: __W_DC:1__}
 
     scale_param {
         filler{value: __VAL:1__}

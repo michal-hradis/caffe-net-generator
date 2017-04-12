@@ -1,6 +1,6 @@
 layer {
   name: "__TOP__"
-  type: "Convolution"
+  type: "BinaryConvolution"
   bottom: "__IN__"
   top: "__TOP__"
 
@@ -23,6 +23,9 @@ layer {
       type: "constant"
       value: __B_VAL:0__
     }
- 
+  }
+  binary_convolution_param {
+    update_weight_diff: __UPDATE:true__
+    scale_weight_diff: __SCALE:true__  
   }
 }
