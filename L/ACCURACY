@@ -4,4 +4,9 @@ layer {
   type: "Accuracy"
   bottom: "__IN1__"
   bottom: "__IN2__"
+  
+  accuracy_param{
+    top_k: __K:1__
+  }
+  loss_weight: 0
 }
