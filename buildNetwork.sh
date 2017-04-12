@@ -20,12 +20,12 @@ do
   	    ;;
         3)  STATE=2
   	      VALUE=$word
-          TEXT=$(echo "$TEXT" | sed "s/__${KEY}(:.*)?__/$VALUE/" -r )
+          TEXT=$(echo "$TEXT" | sed "s|__${KEY}(:.*)?__|$VALUE|" -r )
   	    ;;
     esac
   done
 
-  TEXT=$(echo "$TEXT" | sed "s/__.*://" | sed "s/__.*__//" | sed "s/__//")
+  TEXT=$(echo "$TEXT" | sed "s|__.*:||" | sed "s|__.*__||" | sed "s/__//")
 
   echo "$TEXT"
 done
