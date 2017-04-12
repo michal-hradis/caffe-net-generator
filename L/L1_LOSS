@@ -23,5 +23,5 @@ layer {
   reduction_param {
     operation: MEAN
   }
-  loss_weight: 1
+  loss_weight: __WEIGHT:1__
 }
