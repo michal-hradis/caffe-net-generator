@@ -1,0 +1,111 @@
+layer {
+  name: "__TOP__-branch1-bn0"
+  type: "BatchNorm"
+  bottom: "__IN__"
+  top: "__TOP__-branch1-bn0"
+  batch_norm_param {
+    moving_average_fraction: 0.992
+    eps: 0.0001
+    #use_global_stats: __GLOBAL_STATS:false__
+  }
+  param{lr_mult:0.0}
+  param{lr_mult:0.0}
+  param{lr_mult:0.0}
+}
+layer {
+  name: "__TOP__-branch1-signum0"
+  type: "Signum"
+  bottom: "__TOP__-branch1-bn0"
+  top: "__TOP__-branch1-signum0"
+}
+layer {
+  name: "__TOP__-branch1-conv0"
+  type: "BinaryConvolution"
+  bottom: "__TOP__-branch1-signum0"
+  top: "__TOP__-branch1-conv0"
+
+  param { lr_mult: __W_LR:1__
+       decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__
+       decay_mult: 0}
+  convolution_param {
+    bias_term: __BIAS:true__
+    kernel_size: __K_SIZE:3__
+    num_output: __CHANNELS:64__
+    stride: 1
+    pad: __PAD:0__
+    group: __GROUP:1__
+    weight_filler {
+      type: "__W_FILLER:xavier__"
+      std: __W_STD:0.001__
+    }
+    bias_filler {
+      type: "constant"
+      value: __B_VAL:0__
+    }
+  }
+  binary_convolution_param {
+    update_weight_diff: __UPDATE:true__
+    scale_weight_diff: __SCALE:true__
+  }
+}
+layer {
+  name: "__TOP__-branch1-bn1"
+  type: "BatchNorm"
+  bottom: "__TOP__-branch1-conv0"
+  top: "__TOP__-branch1-bn1"
+  batch_norm_param {
+    moving_average_fraction: 0.992
+    eps: 0.0001
+    #use_global_stats: __GLOBAL_STATS:false__
+  }
+  param{lr_mult:0.0}
+  param{lr_mult:0.0}
+  param{lr_mult:0.0}
+}
+layer {
+  name: "__TOP__-branch1-signum1"
+  type: "Signum"
+  bottom: "__TOP__-branch1-bn1"
+  top: "__TOP__-branch1-signum1"
+}
+layer {
+  name: "__TOP__-branch1-conv1"
+  type: "BinaryConvolution"
+  bottom: "__TOP__-branch1-signum1"
+  top: "__TOP__-branch1-conv1"
+
+  param { lr_mult: __W_LR:1__
+       decay_mult: __W_DC:1__}
+  param { lr_mult: __B_LR:1__
+       decay_mult: 0}
+  convolution_param {
+    bias_term: __BIAS:true__
+    kernel_size: __K_SIZE:3__
+    num_output: __CHANNELS:64__
+    stride: 1
+    pad: __PAD:0__
+    group: __GROUP:1__
+    weight_filler {
+      type: "__W_FILLER:xavier__"
+      std: __W_STD:0.001__
+    }
+    bias_filler {
+      type: "constant"
+      value: __B_VAL:0__
+    }
+  }
+  binary_convolution_param {
+    update_weight_diff: __UPDATE:true__
+    scale_weight_diff: __SCALE:true__
+  }
+}
+
+layer {
+  name: "__TOP__"
+  type: "Eltwise"
+  bottom: "__IN__"
+  bottom: "__TOP__-branch1-conv1"
+  top: "__TOP__"
+  eltwise_param { operation: __OP:SUM__ }
+}
