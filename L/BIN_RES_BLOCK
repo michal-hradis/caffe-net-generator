@@ -19,6 +19,15 @@ layer {
   top: "__TOP__-branch1-signum0"
 }
 layer {
+  name:  "__TOP__-branch1-drop0"
+  type: "Dropout"
+  bottom: "__TOP__-branch1-signum0"
+  top: "__TOP__-branch1-signum0"
+  dropout_param {
+    dropout_ratio: __RATIO:0.0__
+  }
+}
+layer {
   name: "__TOP__-branch1-conv0"
   type: "BinaryConvolution"
   bottom: "__TOP__-branch1-signum0"
@@ -68,6 +77,15 @@ layer {
   type: "Signum"
   bottom: "__TOP__-branch1-bn1"
   top: "__TOP__-branch1-signum1"
+}
+layer {
+  name:  "__TOP__-branch1-drop1"
+  type: "Dropout"
+  bottom: "__TOP__-branch1-signum1"
+  top: "__TOP__-branch1-signum1"
+  dropout_param {
+    dropout_ratio: __RATIO:0.0__
+  }
 }
 layer {
   name: "__TOP__-branch1-conv1"
